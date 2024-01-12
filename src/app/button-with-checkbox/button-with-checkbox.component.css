@@ -1,0 +1,56 @@
+.custom-button{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #000;
+  padding: 5px 5px; /* Decrease padding: vertical | horizontal */
+  width: 100px; /* Set a specific width */
+  height: 40px;
+}
+
+.custom-button:focus, .custom-button:hover, .custom-mat-button:active {
+  box-shadow: none;
+}
+
+.custom-checkbox {
+  display: none;
+}
+
+.custom-checkbox + label {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.custom-checkbox:checked + label {
+  background: white;
+  border: 1px solid black;
+}
+
+.custom-checkbox:checked + label:after {
+  content: '✖'; /* Custom checkmark */
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+
+.button-content{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mat-button:focus {
+  box-shadow: none; /* Removes the shadow on focus for all mat-buttons */
+}

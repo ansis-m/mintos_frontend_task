@@ -1,1 +1,23 @@
-<p>currency-selector works!</p>
+<div class="centered-layout">
+  <div class="border-container">
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <div *ngFor="let currency of selectedCurrencies">
+        <mat-grid-tile>
+          <app-button-with-checkbox
+            [currency]="currency"
+          ></app-button-with-checkbox>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <div *ngFor="let currency of currencies">
+        <mat-grid-tile>
+          <app-button-with-checkbox
+            [currency]="currency"
+          ></app-button-with-checkbox>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+  </div>
+</div>
