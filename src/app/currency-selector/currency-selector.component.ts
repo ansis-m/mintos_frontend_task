@@ -8,24 +8,38 @@ import {Component} from '@angular/core';
 export class CurrencySelectorComponent {
 
   currencies: currency[] = [
-    {abbreviation: 'EUR', checked: false},
-    {abbreviation: 'PLN', checked: false},
-    {abbreviation: 'GEL', checked: false},
-    {abbreviation: 'DKK', checked: false},
-    {abbreviation: 'CZK', checked: false},
-    {abbreviation: 'GBP', checked: false},
-    {abbreviation: 'SEK', checked: false},
-    {abbreviation: 'USD', checked: false},
-    {abbreviation: 'RUB', checked: false}
+    {abbreviation: 'EUR', selected: false},
+    {abbreviation: 'PLN', selected: false},
+    {abbreviation: 'GEL', selected: false},
+    {abbreviation: 'DKK', selected: false},
+    {abbreviation: 'CZK', selected: false},
+    {abbreviation: 'GBP', selected: false},
+    {abbreviation: 'SEK', selected: false},
+    {abbreviation: 'USD', selected: false},
+    {abbreviation: 'RUB', selected: false}
   ];
 
-  get selectedCurrencies(): currency[] {
-    return this.currencies.filter(currency => currency.checked);
+  selectedCurrencies: currency[] = [];
+
+
+  unselectCurrency(unselectedCurrency: currency) {
+    unselectedCurrency.selected = false;
+    this.selectedCurrencies = this.selectedCurrencies.filter(currency => currency !== unselectedCurrency);
   }
 
+  toggleCurrency(selectedCurrency: currency) {
+    selectedCurrency.selected = !selectedCurrency.selected;
+
+    if (selectedCurrency.selected) {
+      !this.selectedCurrencies.includes(selectedCurrency) && this.selectedCurrencies.push(selectedCurrency);
+    } else {
+      this.selectedCurrencies = this.selectedCurrencies.filter(currency => currency !== selectedCurrency);
+    }
+
+  }
 }
 
 export interface currency {
   abbreviation: string;
-  checked: boolean;
+  selected: boolean;
 }

@@ -1,8 +1,9 @@
-<button mat-raised-button class="custom-button" style="background-color: lightgrey; color: midnightblue;"
-        (click)="selectCurrency()">
+<button class="custom-button" style="color: midnightblue;"
+        [style.background-color]="currency.selected? 'white': 'lightgrey'"
+        (click)="selectCurrency.emit(this.currency)">
   <div class="button-content">
     <input type="checkbox" [id]="'customCheckbox' + currency.abbreviation"
-           [checked]="currency.checked"
+           [checked]="currency.selected"
            [disabled]="true"
            class="custom-checkbox">
     <label [for]="'customCheckbox' + currency.abbreviation"></label>
