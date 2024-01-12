@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {currency} from "../currency-selector/currency-selector.component";
 
 @Component({
@@ -10,16 +10,7 @@ export class ButtonWithCheckboxComponent {
   @Input()
   currency: currency = {abbreviation: 'USD', checked: false};
 
-  selectCurrency() {
-    console.log("select")
-    this.currency.checked = !this.currency.checked;
-  }
+  @Output()
+  selectCurrency = new EventEmitter<currency>();
 
-  toggleCurrency(event: MouseEvent) {
-    event.stopPropagation();
-  }
-
-  pass() {
-
-  }
 }

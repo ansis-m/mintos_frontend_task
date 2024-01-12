@@ -3,9 +3,10 @@
     <mat-grid-list cols="3" rowHeight="2:1">
       <div *ngFor="let currency of selectedCurrencies">
         <mat-grid-tile>
-          <app-button-with-checkbox
+          <app-item-with-remove-icon
             [currency]="currency"
-          ></app-button-with-checkbox>
+            (unselectEvent)="unselectCurrency($event)"
+          ></app-item-with-remove-icon>
         </mat-grid-tile>
       </div>
     </mat-grid-list>
@@ -15,6 +16,7 @@
         <mat-grid-tile>
           <app-button-with-checkbox
             [currency]="currency"
+            (selectCurrency)="selectCurrency($event)"
           ></app-button-with-checkbox>
         </mat-grid-tile>
       </div>

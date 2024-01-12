@@ -19,10 +19,28 @@ export class CurrencySelectorComponent {
     {abbreviation: 'RUB', checked: false}
   ];
 
-  get selectedCurrencies(): currency[] {
-    return this.currencies.filter(currency => currency.checked);
+  selectedCurrencies: string[] = [];
+
+
+  unselectCurrency(unselectedCurrency: string) {
+    this.selectedCurrencies = this.selectedCurrencies.filter(selectedCurrency => selectedCurrency !== unselectedCurrency);
+    this.currencies.forEach(currency => {
+      if (currency.abbreviation === unselectedCurrency) {
+        currency.checked = false;
+      }
+    })
   }
 
+  selectCurrency(selectedCurrency: currency) {
+    selectedCurrency.checked = !selectedCurrency.checked;
+
+    if (selectedCurrency.checked) {
+      !this.selectedCurrencies.includes(selectedCurrency.abbreviation) && this.selectedCurrencies.push(selectedCurrency.abbreviation);
+    } else {
+      this.selectedCurrencies = this.selectedCurrencies.filter(currency => currency === selectedCurrency.abbreviation);
+    }
+
+  }
 }
 
 export interface currency {
