@@ -1,6 +1,6 @@
 <div class="button-container">
   <button class="custom-button"
-          [style.background-color]="currency.selected? 'white': 'lightgrey'"
+          [ngClass]="{'custom-button-hover': !currency.selected, 'custom-button-selected': currency.selected}"
           (click)="selectCurrency.emit(this.currency)">
     <div class="button-content">
       <input type="checkbox" [id]="'customCheckbox' + currency.abbreviation"

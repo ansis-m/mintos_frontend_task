@@ -1,6 +1,4 @@
-<div class="selected-currency" style="color: midnightblue;"
-        (click)="unselectEvent.emit(currency)">
-  <div class="">
-    <span>{{currency.abbreviation.toLowerCase()}}</span>
-  </div>
+<div class="selected-currency">
+    <span class="selected-font">{{currency.abbreviation.toLowerCase()}}</span>
+    <span class="round-icon" (click)="unselectEvent.emit(currency)">x</span>
 </div>

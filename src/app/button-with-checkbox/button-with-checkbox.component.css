@@ -9,10 +9,7 @@
   width: 100px;
   height: 30px;
   margin-inside: 100px;
-}
-
-.custom-button:focus, .custom-button:hover, .custom-mat-button:active {
-  box-shadow: none;
+  background-color: lightgray;
 }
 
 .custom-checkbox {
@@ -52,12 +49,25 @@
   justify-content: flex-start;
 }
 
-.mat-button:focus {
-  box-shadow: none;
-}
-
 .currency-font {
   color: darkblue;
-  font-weight: 500;
+  font-weight: 540;
   font-size: 15px;
+}
+
+
+.custom-button-selected {
+  background-color: white;
+}
+
+.custom-button-hover:hover .custom-checkbox:not(:checked) + label{
+  background-color: #BEBEBE;
+}
+
+.custom-button-hover:hover {
+  background-color: #BEBEBE;
+}
+
+.custom-checkbox:not(:checked) + label:hover {
+  background-color: #BEBEBE;
 }

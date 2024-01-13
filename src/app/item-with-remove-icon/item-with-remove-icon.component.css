@@ -1,13 +1,42 @@
 .selected-currency {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0;
   box-shadow: none;
   padding: 5px 5px;
-  width: 90px;
-  height: 25px;
+  width: 85px;
+  height: 20px;
   background-color: lightgray;
 }
 
+.selected-font {
+  color: black;
+  font-weight: 550;
+  font-size: 14px;
+}
 
+.round-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.round-icon:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
