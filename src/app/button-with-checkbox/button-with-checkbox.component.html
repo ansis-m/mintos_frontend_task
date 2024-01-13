@@ -1,12 +1,15 @@
-<button class="custom-button" style="color: midnightblue;"
-        [style.background-color]="currency.selected? 'white': 'lightgrey'"
-        (click)="selectCurrency.emit(this.currency)">
-  <div class="button-content">
-    <input type="checkbox" [id]="'customCheckbox' + currency.abbreviation"
-           [checked]="currency.selected"
-           [disabled]="true"
-           class="custom-checkbox">
-    <label [for]="'customCheckbox' + currency.abbreviation"></label>
-    <span>{{currency.abbreviation}}</span>
-  </div>
-</button>
+<div class="button-container">
+  <button class="custom-button"
+          [style.background-color]="currency.selected? 'white': 'lightgrey'"
+          (click)="selectCurrency.emit(this.currency)">
+    <div class="button-content">
+      <input type="checkbox" [id]="'customCheckbox' + currency.abbreviation"
+             [checked]="currency.selected"
+             [disabled]="true"
+             class="custom-checkbox">
+      <label [for]="'customCheckbox' + currency.abbreviation"></label>
+      <span class="currency-font">{{currency.abbreviation}}</span>
+    </div>
+  </button>
+</div>
+

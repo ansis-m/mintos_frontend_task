@@ -1,12 +1,6 @@
-<button class="custom-button" style="color: midnightblue;"
-        [style.background-color]="'white'"
+<div class="selected-currency" style="color: midnightblue;"
         (click)="unselectEvent.emit(currency)">
-  <div class="button-content">
-    <input type="checkbox" [id]="'item ' + currency"
-           [checked]="currency"
-           [disabled]="true"
-           class="custom-checkbox">
-    <label [for]="'item ' + currency"></label>
+  <div class="">
     <span>{{currency.abbreviation.toLowerCase()}}</span>
   </div>
-</button>
+</div>

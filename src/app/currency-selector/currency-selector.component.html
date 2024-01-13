@@ -1,25 +1,25 @@
 <div class="centered-layout">
   <div class="border-container">
-    <mat-grid-list cols="3" rowHeight="2:1">
+    <div class="grid-container margin-bottom">
       <div *ngFor="let currency of selectedCurrencies">
-        <mat-grid-tile>
+        <div class="grid-item">
           <app-item-with-remove-icon
             [currency]="currency"
             (unselectEvent)="unselectCurrency($event)"
           ></app-item-with-remove-icon>
-        </mat-grid-tile>
+        </div>
       </div>
-    </mat-grid-list>
+    </div>
 
-    <mat-grid-list cols="3" rowHeight="2:1">
+    <div class="grid-container">
       <div *ngFor="let currency of currencies">
-        <mat-grid-tile>
+        <div class="grid-item">
           <app-button-with-checkbox
             [currency]="currency"
             (selectCurrency)="toggleCurrency($event)"
           ></app-button-with-checkbox>
-        </mat-grid-tile>
+        </div>
       </div>
-    </mat-grid-list>
+    </div>
   </div>
 </div>

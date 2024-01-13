@@ -7,9 +7,11 @@ import {currency} from "../currency-selector/currency-selector.component";
   styleUrls: ['./item-with-remove-icon.component.css']
 })
 export class ItemWithRemoveIconComponent {
+
   @Input()
   currency: currency = {abbreviation: "USD", selected: false};
 
   @Output()
   unselectEvent = new EventEmitter<currency>();
+
 }

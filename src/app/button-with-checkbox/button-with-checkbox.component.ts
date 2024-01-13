@@ -7,6 +7,7 @@ import {currency} from "../currency-selector/currency-selector.component";
   styleUrls: ['./button-with-checkbox.component.css']
 })
 export class ButtonWithCheckboxComponent {
+
   @Input()
   currency: currency = {abbreviation: 'USD', selected: false};
 

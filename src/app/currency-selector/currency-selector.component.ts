@@ -22,12 +22,12 @@ export class CurrencySelectorComponent {
   selectedCurrencies: currency[] = [];
 
 
-  unselectCurrency(unselectedCurrency: currency) {
+  unselectCurrency(unselectedCurrency: currency): void {
     unselectedCurrency.selected = false;
     this.selectedCurrencies = this.selectedCurrencies.filter(currency => currency !== unselectedCurrency);
   }
 
-  toggleCurrency(selectedCurrency: currency) {
+  toggleCurrency(selectedCurrency: currency): void {
     selectedCurrency.selected = !selectedCurrency.selected;
 
     if (selectedCurrency.selected) {

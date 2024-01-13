@@ -14,3 +14,19 @@
   min-height: 100px;
 }
 
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-item{
+
+}
+
+.margin-bottom{
+  margin-bottom: 20px;
+}
+
