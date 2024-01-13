@@ -12,35 +12,8 @@
   background-color: lightgray;
 }
 
-.custom-checkbox {
-  display: none;
-}
-
-.custom-checkbox + label {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background: lightgray;
-  border: 1px solid black;
-  border-radius: 3px;
-  position: relative;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.custom-checkbox:checked + label {
-  background: white;
-  border: 1px solid black;
-}
-
-.custom-checkbox:checked + label:after {
-  content: '✖';
-  color: red;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12px;
+.custom-button-selected {
+  background-color: white;
 }
 
 .button-content{
@@ -55,11 +28,32 @@
   font-size: 15px;
 }
 
-.custom-button-selected {
-  background-color: white;
+.selection-indicator {
+  width: 12px;
+  height: 12px;
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-right: 5px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 12px;
 }
 
-.custom-button-hover:hover .custom-checkbox:not(:checked) + label{
+.selection-indicator.selected {
+  background: white;
+}
+
+.selection-indicator.selected:hover {
+  background: white;
+}
+
+.selection-indicator:hover {
+  background-color: #BEBEBE;
+}
+
+.custom-button:hover .selection-indicator:not(.selected) {
   background-color: #BEBEBE;
 }
 
@@ -67,6 +61,7 @@
   background-color: #BEBEBE;
 }
 
-.custom-checkbox:not(:checked) + label:hover {
-  background-color: #BEBEBE;
+.x-mark {
+  color: red;
+  font-size: 12px;
 }
